@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Spirograph</title>
+</head>
+<body onload="initElement()">
+<script type="application/javascript" src="js/application.js"></script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="outerCircleLabel">Outer circle:</span>
+                        </div>
+                        <input type="range" id="outerCircle" value="100" max="250" min="1" class="form-control"
+                               aria-describedby="outerCircleLabel">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="innerCircleLabel">Inner circle:</span>
+                        </div>
+                        <input type="range" id="innerCircle" value="39" max="250" min="1" class="form-control"
+                               aria-describedby="innerCircleLabel">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="offsetLabel">Offset:</span>
+                        </div>
+                        <input type="range" id="offset" value="14" max="250" min="1" class="form-control"
+                               aria-describedby="offsetLabel">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="colorPickerLabel">Color:</span>
+                        </div>
+                        <input id="colorPicker" type="color" class="form-control" aria-describedby="colorPickerLabel">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="inside" checked>
+                        <label class="form-check-label" for="inside">Inner</label>
+                    </div>
+
+                    <input id="drawButton" value="Draw" type="button" class="btn btn-outline-primary"/>
+                    <input id="clearButton" value="Clear" type="button" class="btn btn-outline-primary"/>
+                    <input id="randomButton" value="Random" type="button" class="btn btn-outline-primary"/>
+
+                </div>
+            </form>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-7">
+            <div class="row">
+                <div class="input-group mx-sm-3 mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="timeLabel">Czas:</span>
+                    </div>
+                    <input type="range" id="time" value="10000" max="60000" class="form-control"
+                           aria-describedby="timeLabel">
+                </div>
+            </div>
+            <div style="position: relative;">
+                <canvas id="layer1" width="1100" height="700"></canvas>
+                <canvas id="layer2" width="1100" height="700"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

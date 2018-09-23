@@ -1,0 +1,23 @@
+body {
+    padding: 20px;
+}
+
+#layer1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+#layer2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    border: 1px solid #000000;
+}
+
+.move-left {
+    width: auto;
+    box-shadow: none;
+}
