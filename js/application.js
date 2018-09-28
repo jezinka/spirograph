@@ -77,12 +77,27 @@ function clear(canvas) {
 }
 
 function random() {
-    document.getElementById('innerCircle').value = Math.floor((Math.random() * 250) + 1);
-    document.getElementById('outerCircle').value = Math.floor((Math.random() * 250) + 1);
-    document.getElementById('offset').value = Math.floor((Math.random() * 250) + 1);
+    let innerCircle = document.getElementById('innerCircle');
+    let outerCircle = document.getElementById('outerCircle');
+    let offset = document.getElementById('offset');
+
+    innerCircle.value = Math.floor((Math.random() * innerCircle.max) + 1);
+    outerCircle.value = Math.floor((Math.random() * outerCircle.max) + 1);
+    offset.value = Math.floor((Math.random() * offset.max) + 1);
     document.getElementById('colorPicker').value = '#' + (0x1000000 + (Math.random()) * 0xffffff).toString(16).substr(1, 6);
     refreshCircles();
     draw();
+}
+
+function changeMax() {
+    let max = 250;
+
+    if (!document.getElementById('inside').checked) {
+        max = 15;
+    }
+
+    document.getElementById('innerCircle').max = max;
+    document.getElementById('outerCircle').max = max;
 }
 
 function initElement() {
@@ -92,6 +107,8 @@ function initElement() {
     document.getElementById('innerCircle').onchange = refreshCircles;
     document.getElementById('outerCircle').onchange = refreshCircles;
     document.getElementById('offset').onchange = refreshCircles;
+    document.getElementById("inside").onchange = changeMax;
+
+    refreshCircles();
 }
 
-refreshCircles();
