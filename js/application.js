@@ -101,13 +101,13 @@ function changeMax() {
 }
 
 function initElement() {
-    document.getElementById("clearButton").onclick = () => clear('layer2');
-    document.getElementById("drawButton").onclick = draw;
-    document.getElementById("randomButton").onclick = random;
-    document.getElementById('innerCircle').onchange = refreshCircles;
-    document.getElementById('outerCircle').onchange = refreshCircles;
-    document.getElementById('offset').onchange = refreshCircles;
-    document.getElementById("inside").onchange = changeMax;
+    document.getElementById("clearButton").addEventListener('click', () => clear('layer2'), false);
+    document.getElementById("drawButton").addEventListener('click', draw, false);
+    document.getElementById("randomButton").addEventListener('click', random, false);
+    document.getElementById('innerCircle').addEventListener('change', refreshCircles, false);
+    document.getElementById('outerCircle').addEventListener('change', refreshCircles, false);
+    document.getElementById('offset').addEventListener('change', refreshCircles, false);
+    document.getElementById("inside").addEventListener('change', changeMax, false);
 
     refreshCircles();
 }
